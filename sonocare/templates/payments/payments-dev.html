@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block script %}
+{% endblock %}
+
+
+
+{% block content %}
+<form action="" method="POST">
+  {% csrf_token %}
+    Amount: <br>
+  <input type="text" name="amount" placeholder="0.00"><br>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key={{ publishKey }}
+    data-amount={{ form.amount }}
+    data-name="Stripe.com"
+    data-description="Example charge"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true">
+  </script>
+</form>
+{% endblock %}

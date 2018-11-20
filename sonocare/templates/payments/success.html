@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% if charge %}
+        <h2>Charge {{ charge.status }} </h2>
+        Details
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Charge ID</th>
+                <th scope="col">${{ charge.id }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Amount</th>
+                <td>${{ charge.amount }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Date</th>
+                <td>${{ charge.amount }}</td>
+              </tr>
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
